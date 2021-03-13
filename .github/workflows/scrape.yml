@@ -10,9 +10,6 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-    -name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Check out this repo
       uses: actions/checkout@v2
     - name: Fetch latest data
