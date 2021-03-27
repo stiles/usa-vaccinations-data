@@ -16,6 +16,7 @@ jobs:
       run: |-
         timestamp=$(date '+%Y-%m-%d')
         curl https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data | jq . > "data/vaccinations_${timestamp}.json"
+        curl https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_county_condensed_data | jq . > "data/counties_vax_${timestamp}.json"
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
